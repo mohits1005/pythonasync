@@ -15,3 +15,9 @@ python3
 from tasks import reverse
 reverse('mohit')
 exit()
+
+#
+celery -A tasks worker --loglevel=info
+python3
+from tasks import reverse
+reverse.delay('Mohit')

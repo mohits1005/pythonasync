@@ -1,7 +1,7 @@
 from celery import Celery
 from time import sleep
 
-app = Celery('tasks', broker='http://localhost:15672')
+app = Celery('tasks', broker='amqp://guest@localhost//')
 
 @app.task
 def reverse(text):
